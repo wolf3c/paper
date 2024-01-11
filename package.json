@@ -1,0 +1,37 @@
+{
+  "name": "paper",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.23.5",
+    "@google-cloud/local-auth": "^2.1.0",
+    "bcrypt": "^5.1.1",
+    "dayjs": "^1.11.10",
+    "googleapis": "^105.0.0",
+    "meteor-node-stubs": "^1.2.7",
+    "svelte": "^3.59.2",
+    "tinro": "^0.6.12"
+  },
+  "devDependencies": {
+    "svelte-preprocess": "^5.0.0"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.js",
+      "server": "server/main.js"
+    },
+    "nodeModules": {
+      "recompile": {
+        "svelte": [
+          "legacy"
+        ]
+      }
+    },
+    "testModule": "tests/main.js"
+  }
+}
