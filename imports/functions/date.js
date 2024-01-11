@@ -2,7 +2,7 @@
 // 设置时间为当天0点
 export function startOfDay2rfc3339(dayOffset = 0) {
     // 获取当前时间
-    let now = new Date();
+    let now = new Date(Date.now() + dayOffset * 24 * 60 * 60 * 1000);
 
     let startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0);
     // console.log(startOfDay)
@@ -12,7 +12,7 @@ export function startOfDay2rfc3339(dayOffset = 0) {
 // 设置时间为当天24点
 export function endOfDay2rfc3339(dayOffset = 0) {
     // 获取当前时间
-    let now = new Date();
+    let now = new Date(Date.now() + dayOffset * 24 * 60 * 60 * 1000);
 
     let endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999);
     // console.log(endOfDay)

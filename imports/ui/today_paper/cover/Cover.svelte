@@ -1,10 +1,16 @@
 <script>
     import { Meteor } from "meteor/meteor";
-    let name, slogan;
+    let name, slogan, date;
     $m: {
         let user = Meteor.user();
         name = user?.profile?.paper?.name;
         slogan = user?.profile?.paper?.slogan;
+        date = user?.profile?.paper?.date;
+    }
+
+    function dateFormat(date) {
+        let now = new Date(Date.now() + date * 24 * 60 * 60 * 1000);
+        return `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`
     }
 </script>
 
@@ -13,7 +19,7 @@
 
     <div class="bottom">
         <p class="bottom-center">{slogan}</p>
-        <small class="bottom-center">{`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`}</small>
+        <small class="bottom-center">{dateFormat(date)}</small>
     </div>
 </div>
 

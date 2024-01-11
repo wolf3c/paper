@@ -1,18 +1,25 @@
 <script>
+    import DateSetting from "./date/DateSetting.svelte";
     import Tasks from "./tasks/Tasks.svelte";
     import TasksSetting from "./tasks/TasksSetting.svelte";
     import Cover from "./cover/Cover.svelte";
     import CoverSetting from "./cover/CoverSetting.svelte";
 </script>
 
-<div class="non-print-section">
+<div class="non-print-section settings-container">
     <h2>settings</h2>
+    <h4>Date</h4>
+    <DateSetting />
+
     <h4>Tasks</h4>
     <TasksSetting />
+
     <h4>Cover Page</h4>
     <CoverSetting />
 
-    <br><hr><br><br>
+    <br />
+    <hr />
+    <br /><br />
 </div>
 
 <div class="container">
@@ -21,10 +28,10 @@
         <Tasks />
     </div>
     <div class="box">
-    <big>NOTES</big>
+        <big>NOTES</big>
     </div>
     <div class="box">
-    <big>PUZZLE GAME</big>
+        <big>PUZZLE GAME</big>
     </div>
 
     <div class="box"></div>
@@ -34,8 +41,21 @@
 </div>
 
 <style>
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 0;
+    }
+
     * {
         box-sizing: border-box;
+    }
+
+    .settings-container {
+        margin: 20px;
     }
 
     .container {

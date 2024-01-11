@@ -3,6 +3,7 @@
     import { startOfDay2rfc3339, endOfDay2rfc3339, rfc3339ToInt } from "/imports/functions/date";
 
     let tasks = [];
+    let date = Meteor.user()?.profile?.paper?.date || 0;
 
     async function login() {
         console.log("start login");
@@ -35,8 +36,8 @@
             });
         console.log(lists)
 
-        let startTime = startOfDay2rfc3339();
-        let endTime = endOfDay2rfc3339();
+        let startTime = startOfDay2rfc3339(date);
+        let endTime = endOfDay2rfc3339(date);
         console.log(startTime, endTime);
 
         console.log("start get tasks");
