@@ -1,5 +1,5 @@
 node_modules/
 .deploy/
-.meteor/
 .DS_Store
 .vscode/typings/meteor.d.ts
+.meteor/local/
