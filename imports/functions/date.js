@@ -12,7 +12,5 @@ export function endOfDay2rfc3339(dayOffset = 0) {
 
 // RFC 3339 timestamp 转化成 数字
 export function rfc3339ToInt(rfc3339) {
-    let date = new Date(rfc3339);
-    let timestamp = date.getTime();
-    return timestamp;
+    return new Date(rfc3339).getTime()
 }
