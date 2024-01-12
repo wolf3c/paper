@@ -3,7 +3,8 @@
     import { startOfDay2rfc3339, endOfDay2rfc3339, rfc3339ToInt } from "/imports/functions/date";
 
     let tasks = [];
-    let date = Meteor.user()?.profile?.paper?.date || 0;
+    let date = 0;
+    $m: date = Meteor.user()?.profile?.paper?.date || 0;
 
     async function login() {
         console.log("start login");
