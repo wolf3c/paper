@@ -20,7 +20,7 @@ Meteor.methods({
     'tasks.get'({listId, dueMax, dueMin}) {
         const apiKey = Meteor.settings.private.serviceConfigurations.google.apiKey;
         const accessToken = Meteor.user().services.google.accessToken;
-        const apiUrl = `https://tasks.googleapis.com/tasks/v1/lists/${listId}/tasks?key=${apiKey + (dueMax ? '&dueMax='+dueMax : '') + (dueMin ? '&dueMin='+dueMin : '')}&showCompleted=false`;
+        const apiUrl = `https://tasks.googleapis.com/tasks/v1/lists/${listId}/tasks?key=${apiKey + (dueMax ? '&dueMax='+dueMax : '') + (dueMin ? '&dueMin='+dueMin : '')}&showCompleted=false&maxResults=100`;
         console.log(apiUrl)
         const response = HTTP.get(apiUrl, {
             headers: {
