@@ -3,9 +3,9 @@
     let name, slogan, date;
     $m: {
         let user = Meteor.user();
-        name = user?.profile?.paper?.name;
-        slogan = user?.profile?.paper?.slogan;
-        date = user?.profile?.paper?.date;
+        name = user?.profile?.paper?.name || null;
+        slogan = user?.profile?.paper?.slogan || null;
+        date = user?.profile?.paper?.date || 0;
     }
 
     function dateFormat(date=0) {
