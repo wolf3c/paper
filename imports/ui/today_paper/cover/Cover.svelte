@@ -8,17 +8,17 @@
         date = user?.profile?.paper?.date;
     }
 
-    function dateFormat(date) {
+    function dateFormat(date=0) {
         let now = new Date(Date.now() + date * 24 * 60 * 60 * 1000);
         return `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`
     }
 </script>
 
 <div class="container">
-    <h1 class="top">{name}'s <br />TODAY</h1>
+    <h1 class="top">{name ? name+'\'s' : 'PAPER'} <br />TODAY</h1>
 
     <div class="bottom">
-        <p class="bottom-center">{slogan}</p>
+        <p class="bottom-center">{slogan || ''}</p>
         <small class="bottom-center">{dateFormat(date)}</small>
     </div>
 </div>
