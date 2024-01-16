@@ -10,6 +10,7 @@
   "dependencies": {
     "@babel/runtime": "^7.23.5",
     "@google-cloud/local-auth": "^2.1.0",
+    "@material/web": "^1.1.1",
     "bcrypt": "^5.1.1",
     "dayjs": "^1.11.10",
     "googleapis": "^105.0.0",
