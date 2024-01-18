@@ -26,3 +26,4 @@ google-oauth
 http
 accounts-google
 service-configuration
+montiapm:agent
